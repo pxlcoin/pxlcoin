@@ -1,0 +1,9 @@
+Building pxlcoin
+
+See doc/readme-qt.rst for instructions on building pxlcoin-qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of pxlcoin.
+
+See doc/build-*.txt for instructions on building pxlcoin,
+the intended-for-services, no-graphical-interface, reference
+implementation of pxlcoin.
