@@ -193,7 +193,11 @@ void OptionsDialog::showRestartWarning_Proxy()
 {
     if(!fRestartWarningDisplayed_Proxy)
     {
+<<<<<<< HEAD
         QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting PxlCoin."), QMessageBox::Ok);
+=======
+        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting FooCoin."), QMessageBox::Ok);
+>>>>>>> origin/master
         fRestartWarningDisplayed_Proxy = true;
     }
 }
@@ -202,7 +206,11 @@ void OptionsDialog::showRestartWarning_Lang()
 {
     if(!fRestartWarningDisplayed_Lang)
     {
+<<<<<<< HEAD
         QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting PxlCoin."), QMessageBox::Ok);
+=======
+        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting FooCoin."), QMessageBox::Ok);
+>>>>>>> origin/master
         fRestartWarningDisplayed_Lang = true;
     }
 }

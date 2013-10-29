@@ -109,7 +109,11 @@ static std::string Translate(const char* psz)
 static void handleRunawayException(std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
+<<<<<<< HEAD
     QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occured. PxlCoin can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
+=======
+    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occured. FooCoin can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
+>>>>>>> origin/master
     exit(1);
 }
 
@@ -121,7 +125,11 @@ int main(int argc, char *argv[])
     // Do this early as we don't want to bother initializing if we are just calling IPC
     for (int i = 1; i < argc; i++)
     {
+<<<<<<< HEAD
         if (boost::algorithm::istarts_with(argv[i], "pxlcoin:"))
+=======
+        if (boost::algorithm::istarts_with(argv[i], "foocoin:"))
+>>>>>>> origin/master
         {
             const char *strURI = argv[i];
             try {
@@ -169,12 +177,21 @@ int main(int argc, char *argv[])
 
     // Application identification (must be set before OptionsModel is initialized,
     // as it is used to locate QSettings)
+<<<<<<< HEAD
     app.setOrganizationName("PxlCoin");
     app.setOrganizationDomain("we-have-no-domain-yet.nex");
     if(GetBoolArg("-testnet")) // Separate UI settings for testnet
         app.setApplicationName("pxlcoin-qt-testnet");
     else
         app.setApplicationName("pxlcoin-qt");
+=======
+    app.setOrganizationName("FooCoin");
+    app.setOrganizationDomain("we-have-no-domain-yet.nex");
+    if(GetBoolArg("-testnet")) // Separate UI settings for testnet
+        app.setApplicationName("foocoin-qt-testnet");
+    else
+        app.setApplicationName("foocoin-qt");
+>>>>>>> origin/master
 
     // ... then GUI settings:
     OptionsModel optionsModel;
@@ -278,7 +295,11 @@ int main(int argc, char *argv[])
                 // Check for URI in argv
                 for (int i = 1; i < argc; i++)
                 {
+<<<<<<< HEAD
                     if (boost::algorithm::istarts_with(argv[i], "pxlcoin:"))
+=======
+                    if (boost::algorithm::istarts_with(argv[i], "foocoin:"))
+>>>>>>> origin/master
                     {
                         const char *strURI = argv[i];
                         try {

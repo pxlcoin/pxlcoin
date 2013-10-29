@@ -45,6 +45,7 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
+<<<<<<< HEAD
     case BTC: return QString("PxlCoin");
     case mBTC: return QString("milliPxlCoin (1 / 1,000)");
     case uBTC: return QString("microPxlCoin (1 / 1,000,000)");
@@ -52,6 +53,15 @@ QString BitcoinUnits::description(int unit)
     }
 }
 //a single unit (.00000001) of PxlCoin is called a "wander."
+=======
+    case BTC: return QString("FooCoin");
+    case mBTC: return QString("milliFooCoin (1 / 1,000)");
+    case uBTC: return QString("microFooCoin (1 / 1,000,000)");
+    default: return QString("???");
+    }
+}
+//a single unit (.00000001) of FooCoin is called a "wander."
+>>>>>>> origin/master
 qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)

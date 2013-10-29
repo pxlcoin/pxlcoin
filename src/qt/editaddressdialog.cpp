@@ -93,7 +93,11 @@ void EditAddressDialog::accept()
             break;
         case AddressTableModel::INVALID_ADDRESS:
             QMessageBox::warning(this, windowTitle(),
+<<<<<<< HEAD
                 tr("The entered address \"%1\" is not a valid PxlCoin address.").arg(ui->addressEdit->text()),
+=======
+                tr("The entered address \"%1\" is not a valid FooCoin address.").arg(ui->addressEdit->text()),
+>>>>>>> origin/master
                 QMessageBox::Ok, QMessageBox::Ok);
             return;
         case AddressTableModel::WALLET_UNLOCK_FAILURE:

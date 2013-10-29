@@ -50,7 +50,11 @@ map<uint256, map<uint256, CDataStream*> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
+<<<<<<< HEAD
 const string strMessageMagic = "PxlCoin Signed Message:\n";
+=======
+const string strMessageMagic = "FooCoin Signed Message:\n";
+>>>>>>> origin/master
 
 double dHashesPerSec;
 int64 nHPSTimerStart;
@@ -833,8 +837,13 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
+<<<<<<< HEAD
 static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // PxlCoin: 1 days
 static const int64 nTargetSpacing = 120; // PxlCoin: 2 minute blocks
+=======
+static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // FooCoin: 1 days
+static const int64 nTargetSpacing = 120; // FooCoin: 2 minute blocks
+>>>>>>> origin/master
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix
@@ -1178,7 +1187,11 @@ bool CTransaction::ConnectInputs(MapPrevTx inputs,
 {
     // Take over previous transactions' spent pointers
     // fBlock is true when this is called from AcceptBlock when a new best-block is added to the blockchain
+<<<<<<< HEAD
     // fMiner is true when called from the internal pxlcoin miner
+=======
+    // fMiner is true when called from the internal foocoin miner
+>>>>>>> origin/master
     // ... both are false when called from CTransaction::AcceptToMemoryPool
     if (!IsCoinBase())
     {
@@ -1925,7 +1938,11 @@ bool CheckDiskSpace(uint64 nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
+<<<<<<< HEAD
         uiInterface.ThreadSafeMessageBox(strMessage, "PxlCoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+=======
+        uiInterface.ThreadSafeMessageBox(strMessage, "FooCoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+>>>>>>> origin/master
         StartShutdown();
         return false;
     }

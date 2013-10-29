@@ -78,7 +78,11 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
+<<<<<<< HEAD
     if(uri.scheme() != QString("pxlcoin"))
+=======
+    if(uri.scheme() != QString("foocoin"))
+>>>>>>> origin/master
         return false;
 
     // check if the address is valid
@@ -128,6 +132,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
+<<<<<<< HEAD
     // Convert PxlCoin:// to PxlCoin:
     //
     //    Cannot handle this later, because pxlcoin:// will cause Qt to see the part after // as host,
@@ -135,6 +140,15 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
     if(uri.startsWith("pxlcoin://"))
     {
         uri.replace(0, 11, "pxlcoin:");
+=======
+    // Convert FooCoin:// to FooCoin:
+    //
+    //    Cannot handle this later, because foocoin:// will cause Qt to see the part after // as host,
+    //    which will lowercase it (and thus invalidate the address).
+    if(uri.startsWith("foocoin://"))
+    {
+        uri.replace(0, 11, "foocoin:");
+>>>>>>> origin/master
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -278,12 +292,20 @@ bool ToolTipToRichTextFilter::eventFilter(QObject *obj, QEvent *evt)
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
+<<<<<<< HEAD
     return GetSpecialFolderPath(CSIDL_STARTUP) / "PxlCoin.lnk";
+=======
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "FooCoin.lnk";
+>>>>>>> origin/master
 }
 
 bool GetStartOnSystemStartup()
 {
+<<<<<<< HEAD
     // check for PxlCoin.lnk
+=======
+    // check for FooCoin.lnk
+>>>>>>> origin/master
     return boost::filesystem::exists(StartupShortcutPath());
 }
 
@@ -360,7 +382,11 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
+<<<<<<< HEAD
     return GetAutostartDir() / "pxlcoin.desktop";
+=======
+    return GetAutostartDir() / "foocoin.desktop";
+>>>>>>> origin/master
 }
 
 bool GetStartOnSystemStartup()
@@ -398,10 +424,17 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         boost::filesystem::ofstream optionFile(GetAutostartFilePath(), std::ios_base::out|std::ios_base::trunc);
         if (!optionFile.good())
             return false;
+<<<<<<< HEAD
         // Write a pxlcoin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         optionFile << "Name=PxlCoin\n";
+=======
+        // Write a foocoin.desktop file to the autostart directory:
+        optionFile << "[Desktop Entry]\n";
+        optionFile << "Type=Application\n";
+        optionFile << "Name=FooCoin\n";
+>>>>>>> origin/master
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -422,10 +455,17 @@ bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
 HelpMessageBox::HelpMessageBox(QWidget *parent) :
     QMessageBox(parent)
 {
+<<<<<<< HEAD
     header = tr("pxlcoin-qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
         "  pxlcoin-qt [" + tr("command-line options") + "]                     " + "\n";
+=======
+    header = tr("foocoin-qt") + " " + tr("version") + " " +
+        QString::fromStdString(FormatFullVersion()) + "\n\n" +
+        tr("Usage:") + "\n" +
+        "  foocoin-qt [" + tr("command-line options") + "]                     " + "\n";
+>>>>>>> origin/master
 
     coreOptions = QString::fromStdString(HelpMessage());
 
@@ -434,7 +474,11 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
         "  -min                   " + tr("Start minimized") + "\n" +
         "  -splash                " + tr("Show splash screen on startup (default: 1)") + "\n";
 
+<<<<<<< HEAD
     setWindowTitle(tr("pxlcoin-qt"));
+=======
+    setWindowTitle(tr("foocoin-qt"));
+>>>>>>> origin/master
     setTextFormat(Qt::PlainText);
     // setMinimumWidth is ignored for QMessageBox so put in nonbreaking spaces to make it wider.
     setText(header + QString(QChar(0x2003)).repeated(50));

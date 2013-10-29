@@ -85,7 +85,11 @@ void ipcInit()
     try {
         mq = new message_queue(open_or_create, BITCOINURI_QUEUE_NAME, 2, MAX_URI_LENGTH);
 
+<<<<<<< HEAD
         // Make sure we don't lose any pxlcoin: URIs
+=======
+        // Make sure we don't lose any foocoin: URIs
+>>>>>>> origin/master
         for (int i = 0; i < 2; i++)
         {
             ptime d = boost::posix_time::microsec_clock::universal_time() + millisec(1);
